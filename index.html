@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,17 @@
     <link href="output.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
-<body class="bg-pink-900">
-    <h1 class="flex justify-center items-center text-7xl text-amber-400 font-extrabold mt-6">Digital Clock</h1>
-    <div class="clock-container flex items-center justify-center mt-14 text-8xl text-amber-400 font-extrabold"> 
-        <div id="clock">00:00:00</div>
-        
-    </div>
+
+<body class="bg-pink-900 min-h-screen flex flex-col justify-between p-6">
+    <header class="w-full flex justify-center">
+        <h1 class="flex justify-center items-center text-7xl text-amber-400 font-extrabold mt-6">Digital Clock</h1>
+    </header>
+    
+        <main class="grow flex flex-col justify-center items-center">
+            <div id="clock" class="mt-14 text-7xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+        <div id="date" class="text-3xl text-amber-400 font-extrabold mt-2">Loading Date...</div>
+        </main>
+    <div class="h-12 visibility-hidden aria-hidden:"></div>
 </body>
+
 </html>
