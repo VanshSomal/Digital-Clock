@@ -38,9 +38,59 @@ function updateClock(){
     dateElement.textContent=dateString;
 }
 
+function updateWorldClocks(){
+    const now=new Date();
+
+    const timeOptions={
+        hour:'2-digits',
+        minute:'2-digits',
+        second:'2-digits',
+        hour12:true
+    };
+
+    const dateOptions={
+        weekday:'short',
+        month:'short',
+        day:'numeric',
+        year:'numeric'
+    };
+
+    document.getElementById('ny-clock').textContent=now.toLocaleTimeString('en-US',{timeOptions,timeZone:'America/New_York'});
+    document.getElementById('ny-date').textContent=now.toLocaleDateString('en-US',{dateOptions,timeZone:'America/New_York'});
+
+    document.getElementById('london-clock').textContent=now.toLocaleTimeString('en-US',{timeOptions,timeZone:'Europe/London'});
+    document.getElementById('london-date').textContent=now.toLocaleDateString('en-US',{dateOptions,timeZone:'Europe/London'});
+
+    document.getElementById('tokyo-clock').textContent=now.toLocaleTimeString('en-US',{timeOptions,timeZone:'Asia/Tokyo'});
+    document.getElementById('tokyo-date').textContent=now.toLocaleDateString('en-US',{dateOptions,timeZone:'Asia/Tokyo'});
+
+    document.getElementById('toronto-clock').textContent=now.toLocaleTimeString('en-US',{timeOptions,timeZone:'America/Toronto'});
+    document.getElementById('toronto-date').textContent=now.toLocaleDateString('en-US',{dateOptions,timeZone:'America/Toronto'});
+
+
+
+
+}
+
 updateClock();
+updateWorldClocks();
 // Run the function every 1 second (1000 miliseconds)
 setInterval(updateClock,1000);
+setInterval(updateWorldClocks,1000);
 
+// --- HORIZONTAL NAVIGATION CAROUSEL LOGIC ---
+const track = document.getElementById('card-track');
+const btnLeft = document.getElementById('scroll-left');
+const btnRight = document.getElementById('scroll-right');
 
+// Define how far the carousel should scroll on each button click (e.g., width of 1 card + gap)
+const scrollAmount = 224; // 208px card width + 16px gap (gap-4)
+
+btnRight.addEventListener('click', () => {
+    track.scrollLeft += scrollAmount;
+});
+
+btnLeft.addEventListener('click', () => {
+    track.scrollLeft -= scrollAmount;
+});
 // npx @tailwindcss/cli -i ./input.css -o ./output.css --watch

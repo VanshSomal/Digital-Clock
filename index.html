@@ -9,16 +9,78 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="bg-pink-900 min-h-screen flex flex-col justify-between p-6">
-    <header class="w-full flex justify-center">
-        <h1 class="flex justify-center items-center text-7xl text-amber-400 font-extrabold mt-6">Digital Clock</h1>
-    </header>
+<body class="bg-pink-900 min-h-screen flex flex-col justify-between p-4 overflow-x-hidden">
     
-        <main class="grow flex flex-col justify-center items-center">
-            <div id="clock" class="mt-14 text-7xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+    <header class="w-full flex justify-center">
+        <h1 class="text-7xl text-amber-400 font-extrabold mt-6">Digital Clock</h1>
+    </header>
+
+    <main class="grow flex flex-col justify-center items-center my-8">
+        <div id="clock" class="text-7xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
         <div id="date" class="text-3xl text-amber-400 font-extrabold mt-2">Loading Date...</div>
-        </main>
-    <div class="h-12 visibility-hidden aria-hidden:"></div>
+    </main>
+
+    <div class="relative w-full max-w-5xl mx-auto mb-6 px-8 group">
+
+    <button id="scroll-left" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-pink-950/80 hover:bg-amber-400 hover:text-pink-950 border border-amber-400 text-amber-400 w-10 h-10 rounded-full flex justify-center items-center font-bold text-xl transition-all duration-200 shadow-md">
+        &#10094;
+    </button>
+
+    <div id="card-track" class="flex flex-row overflow-x-auto gap-4 w-full py-2 scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        
+        <div class="border-2 h-40 w-52 shrink-0 rounded-xl bg-pink-950 flex flex-col overflow-hidden">
+            <div class="p-2 text-center text-xs sm:text-sm font-semibold tracking-wide text-amber-400 bg-pink-900/40 truncate">
+                New York, US
+            </div>
+            <hr class="border-amber-400/30">
+            <div class="grow flex flex-col justify-center items-center p-2">
+                <div id="ny-clock" class="text-xl sm:text-2xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+                <div id="ny-date" class="text-xs text-amber-400 font-bold mt-1">Loading...</div>
+            </div>
+        </div>
+
+        <div class="border-2 h-40 w-52 shrink-0 rounded-xl bg-pink-950 flex flex-col overflow-hidden">
+            <div class="p-2 text-center text-xs sm:text-sm font-semibold tracking-wide text-amber-400 bg-pink-900/40 truncate">
+                London, UK
+            </div>
+            <hr class="border-amber-400/30">
+            <div class="grow flex flex-col justify-center items-center p-2">
+                <div id="london-clock" class="text-xl sm:text-2xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+                <div id="london-date" class="text-xs text-amber-400 font-bold mt-1">Loading...</div>
+            </div>
+        </div>
+
+        <div class="border-2 h-40 w-52 shrink-0 rounded-xl bg-pink-950 flex flex-col overflow-hidden">
+            <div class="p-2 text-center text-xs sm:text-sm font-semibold tracking-wide text-amber-400 bg-pink-900/40 truncate">
+                Tokyo, JP
+            </div>
+            <hr class="border-amber-400/30">
+            <div class="grow flex flex-col justify-center items-center p-2">
+                <div id="tokyo-clock" class="text-xl sm:text-2xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+                <div id="tokyo-date" class="text-xs text-amber-400 font-bold mt-1">Loading...</div>
+            </div>
+        </div>
+
+        <div class="border-2 h-40 w-52 shrink-0 rounded-xl bg-pink-950 flex flex-col overflow-hidden">
+            <div class="p-2 text-center text-xs sm:text-sm font-semibold tracking-wide text-amber-400 bg-pink-900/40 truncate">
+                Toronto, Canada
+            </div>
+            <hr class="border-amber-400/30">
+            <div class="grow flex flex-col justify-center items-center p-2">
+                <div id="toronto-clock" class="text-xl sm:text-2xl text-amber-400 font-extrabold tracking-wider">00:00:00</div>
+                <div id="toronto-date" class="text-xs text-amber-400 font-bold mt-1">Loading...</div>
+            </div>
+        </div>
+
+        </div>
+
+    <button id="scroll-right" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-pink-950/80 hover:bg-amber-400 hover:text-pink-950 border border-amber-400 text-amber-400 w-10 h-10 rounded-full flex justify-center items-center font-bold text-xl transition-all duration-200 shadow-md">
+        &#10095;
+    </button>
+
+</div>
+
+    <div class="h-6 hidden" aria-hidden="true"></div>
 </body>
 
 </html>
