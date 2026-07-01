@@ -2,7 +2,7 @@
 
 A sleek, responsive, and modern Digital Clock application built using **HTML**, **Tailwind CSS**, and vanilla **JavaScript**. This application features a prominent centered local clock display along with a custom-built, interactive horizontal world clock track showcasing real-time data across different global time zones.
 
-![Digital Clock Preview](https://vanshsomal.github.io/Digital-Clock/)
+(https://vanshsomal.github.io/Digital-Clock/)
 
 ## ✨ Features
 
